@@ -121,7 +121,7 @@ footer a:hover {color:#e6f0ff;}
     <h1>Crack NISM Certification with Expert Guidance</h1>
     <p>Online & Classroom Training | Learn from Certified Trainers</p>
     <div class="cta-buttons">
-        <button id="openModal">Enroll Now</button>
+        <button class="openModal">Enroll Now</button>
         <button>View Training Planner</button>
         <button>Fees Structure</button>
         <button id="openDemoBtn">Free Demo Class</button>
@@ -181,7 +181,7 @@ footer a:hover {color:#e6f0ff;}
                 <li>Updated Syllabus</li>
                 <li>Mock Tests & Doubt Sessions</li>
             </ul>
-            <button id="openModal">Enroll Now</button>
+            <button class="openModal">Enroll Now</button>
         </div>
         <div class="pricing-card popular">
             <h3>NISM VB</h3>
@@ -191,7 +191,7 @@ footer a:hover {color:#e6f0ff;}
                 <li>Updated Syllabus</li>
                 <li>High Pass Rate</li>
             </ul>
-            <button id="openModal">Enroll Now</button>
+            <button class="openModal">Enroll Now</button>
         </div>
         <div class="pricing-card">
             <h3>NISM 8</h3>
@@ -201,7 +201,7 @@ footer a:hover {color:#e6f0ff;}
                 <li>Mock Tests</li>
                 <li>Doubt Solving Sessions</li>
             </ul>
-            <button id="openModal">Enroll Now</button>
+            <button class="openModal">Enroll Now</button>
         </div>
         <div class="pricing-card">
             <h3>SEBI Certification</h3>
@@ -211,7 +211,7 @@ footer a:hover {color:#e6f0ff;}
                 <li>Updated Materials</li>
                 <li>Flexible Learning Options</li>
             </ul>
-            <button id="openModal">Enroll Now</button>
+            <button class="openModal">Enroll Now</button>
         </div>
 		<div class="pricing-card">
             <h3>PMS NISM XXI-A</h3>
@@ -221,7 +221,7 @@ footer a:hover {color:#e6f0ff;}
                 <li>Personalized Stratergies</li>
                 <li>Flexible Learning Options</li>
             </ul>
-            <button id="openModal">Enroll Now</button>
+            <button class="openModal">Enroll Now</button>
         </div>
     </div>
 </section>
@@ -380,8 +380,9 @@ const courses = {
 };
 // Modal functionality
 const modal = document.getElementById("modal");
-document.querySelectorAll("#openModal, #openDemoBtn").forEach(btn => {
-    btn.onclick = () => modal.style.display = "block";
+document.querySelectorAll(".openModal, #openDemoBtn").forEach(btn => {
+    btn.addEventListener("click", () => {
+        modal.style.display = "block";
 });
 document.getElementById("closeModal").onclick = () => modal.style.display = "none";
 window.onclick = (e) => { if(e.target==modal) modal.style.display="none"; }
@@ -475,13 +476,9 @@ document.getElementById("closeCourseModal").onclick = () => {
 
 
 
-window.onclick = (e) => {
-
-  if (e.target === courseModal) {
-
-    courseModal.style.display = "none";
-
-  }
+window.addEventListener("click", (e) => {
+    if (e.target === modal) modal.style.display = "none";
+    if (e.target === courseModal) courseModal.style.display = "none";
 
 };
 
