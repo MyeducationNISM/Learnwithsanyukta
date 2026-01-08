@@ -12,27 +12,36 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
-/* Your original styles kept intact */
+/* Global Styles */
 body {margin:0; font-family:'Roboto',sans-serif; background:#f9f9f9; color:#333; scroll-behavior:smooth;}
 a {text-decoration:none; color:inherit;}
 h1,h2,h3,h4 {margin:0;}
+/* Header */
 header {background:linear-gradient(to right,#1a73e8,#155ab6); color:white; text-align:center; padding:80px 20px 50px;}
 header h1 {font-family:'Poppins',sans-serif; font-size:3rem; margin-bottom:20px;}
 header p {font-size:1.3rem; margin-bottom:30px;}
 .cta-buttons {display:flex; flex-wrap:wrap; justify-content:center; gap:15px;}
 .cta-buttons button {background:white; color:#1a73e8; padding:12px 25px; border:none; border-radius:6px; font-size:1rem; cursor:pointer; font-weight:600; transition:0.3s;}
 .cta-buttons button:hover {background:#e6f0ff;}
+
+/* Sections */
 section {max-width:1200px; margin:auto; padding:60px 20px;}
 .section-title {text-align:center; font-size:2rem; font-family:'Poppins',sans-serif; color:#1a73e8; margin-bottom:40px;}
+
+/* Why Choose Us */
 .why-choose {display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; text-align:center;}
 .why-card {background:white; padding:25px; border-radius:10px; box-shadow:0 3px 12px rgba(0,0,0,0.1); font-size:1rem; transition: transform 0.3s, box-shadow 0.3s;}
 .why-card:hover {transform:translateY(-8px); box-shadow:0 8px 20px rgba(0,0,0,0.2);}
+
+/* Courses Offered */
 .courses {display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:20px;}
 .course-card {background:white; padding:20px; border-radius:10px; box-shadow:0 3px 12px rgba(0,0,0,0.1); text-align:center; transition: transform 0.3s, box-shadow 0.3s;}
 .course-card:hover {transform:translateY(-10px); box-shadow:0 10px 25px rgba(0,0,0,0.2);}
 .course-card h3 {color:#1a73e8; margin-bottom:15px;}
 .course-card button {background:#1a73e8; color:white; border:none; padding:10px 20px; border-radius:5px; cursor:pointer;}
 .course-card button:hover {background:#155ab6;}
+
+/* Pricing Section */
 .pricing {display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px;}
 .pricing-card {background:white; padding:25px; border-radius:10px; box-shadow:0 3px 12px rgba(0,0,0,0.1); text-align:center; transition: transform 0.3s, box-shadow 0.3s;}
 .pricing-card.popular {border:2px solid #1a73e8;}
@@ -43,51 +52,38 @@ section {max-width:1200px; margin:auto; padding:60px 20px;}
 .pricing-card ul li {margin:8px 0; color:#555;}
 .pricing-card button {margin-top:15px; background:#1a73e8; color:white; border:none; padding:10px 20px; border-radius:5px; cursor:pointer;}
 .pricing-card button:hover {background:#155ab6;}
+
+/* Testimonials Slider */
 .testimonials {position:relative; overflow:hidden; max-width:1200px; margin:auto;}
 .testimonials-container {display:flex; gap:20px;}
 .review-card {background:white; border-radius:10px; padding:20px; min-width:300px; box-shadow:0 3px 12px rgba(0,0,0,0.1);}
 .review-card h4 {margin-bottom:10px; color:#1a73e8;}
+
+/* Modal */
 .modal {display:none; position:fixed; inset:0; background:rgba(0,0,0,.6); z-index:100; overflow-y:auto;}
 .modal-content {background:#fff; max-width:480px; margin:80px auto; padding:35px 25px; border-radius:12px; box-shadow:0 12px 35px rgba(0,0,0,0.2); position:relative;}
 .modal-content h2 {font-family:'Poppins',sans-serif; font-weight:700; text-align:center; margin-bottom:10px; color:#1a73e8;}
 .modal-content p {text-align:center; color:#555; font-size:0.95rem; margin-bottom:25px;}
 .close {font-size:28px; font-weight:bold; cursor:pointer; position:absolute; right:20px; top:15px; color:#333;}
-/* NISM Course Modal - Enhanced UI */
 
+    /* NISM Course Modal - Enhanced UI */
 #courseModal .modal-content {
-
     max-width:650px;
-
     margin:80px auto;
-
     padding:40px 30px;
-
     border-radius:16px;
-
     box-shadow:0 15px 40px rgba(0,0,0,0.3);
-
     background:linear-gradient(135deg,#f0f4ff,#ffffff);
-
     font-family:'Roboto',sans-serif;
-
     animation:fadeIn 0.4s ease-out;
-
     color:#333;
-
 }
-
 #courseModal h2 {
-
     font-size:2rem;
-
     font-family:'Poppins',sans-serif;
-
     font-weight:700;
-
     color:#1a73e8;
-
     margin-bottom:10px;
-
     text-align:center;
 }
 #courseModal p {text-align:center; font-size:1.05rem; color:#555; margin-bottom:25px;}
@@ -97,6 +93,8 @@ section {max-width:1200px; margin:auto; padding:60px 20px;}
 #courseModal .close {font-size:30px; font-weight:700; cursor:pointer; position:absolute; right:25px; top:20px; color:#1a73e8; transition:0.3s;}
 #courseModal .close:hover {color:#155ab6;}
 @keyframes fadeIn {from {opacity:0; transform:translateY(-20px);} to {opacity:1; transform:translateY(0);}}
+
+
 /* Form Styles */
 #nismForm .form-group {margin-bottom:15px; display:flex; flex-direction:column;}
 #nismForm label {margin-bottom:6px; font-weight:500; font-size:0.95rem;}
@@ -104,13 +102,21 @@ section {max-width:1200px; margin:auto; padding:60px 20px;}
 #nismForm input:focus {border-color:#1a73e8; box-shadow:0 0 5px rgba(26,115,232,0.4); outline:none;}
 button[type="submit"] {width:100%; padding:14px; margin-top:10px; font-size:1.1rem; background:#1a73e8; color:#fff; border:none; border-radius:8px; cursor:pointer; font-weight:600; transition:0.3s;}
 button[type="submit"]:hover {background:#155ab6;}
+
+/* FAQ Section */
 .faq-item {background:white; margin-bottom:10px; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.1);}
 .faq-question {padding:15px; cursor:pointer; font-weight:500; display:flex; justify-content:space-between; align-items:center;}
 .faq-answer {padding:0 15px 15px 15px; display:none; font-size:0.95rem; color:#555;}
+
+/* Footer */
 footer {background:#1a73e8; color:white; text-align:center; padding:40px 20px;}
 footer a {color:white; margin:0 10px; font-size:1.5rem; transition:0.3s;}
 footer a:hover {color:#e6f0ff;}
+
+/* Toast */
 #toast {position:fixed; bottom:30px; left:50%; transform:translateX(-50%); background:#1a73e8; color:white; padding:15px 25px; border-radius:6px; display:none; z-index:200;}
+
+/* Responsive */
 @media screen and (max-width:768px){.cta-buttons {flex-direction:column;} .modal-content {width:90%; margin:50px auto;}}
 </style>
 </head>
@@ -121,7 +127,7 @@ footer a:hover {color:#e6f0ff;}
     <h1>Crack NISM Certification with Expert Guidance</h1>
     <p>Online & Classroom Training | Learn from Certified Trainers</p>
     <div class="cta-buttons">
-        <button class="openModal">Enroll Now</button>
+        <button id="openModal">Enroll Now</button>
         <button>View Training Planner</button>
         <button>Fees Structure</button>
         <button id="openDemoBtn">Free Demo Class</button>
@@ -147,6 +153,7 @@ footer a:hover {color:#e6f0ff;}
 <section>
     <h2 class="section-title">Courses Offered</h2>
     <div class="courses">
+	
         <div class="course-card"><h3>NISM VA</h3><button class="viewBtn" data-course="va">View</button></div>
         <div class="course-card"><h3>NISM VB</h3><button class="viewBtn" data-course="vb">View</button></div>
         <div class="course-card"><h3>NISM VIII</h3><button class="viewBtn" data-course="viii">View</button></div>
@@ -156,17 +163,23 @@ footer a:hover {color:#e6f0ff;}
 	<div class="modal" id="courseModal">
   <div class="modal-content">
     <span class="close" id="closeCourseModal">&times;</span>
+
     <h2 id="courseTitle"></h2>
     <p id="courseTagline"></p>
+
     <h3>Why this course?</h3>
     <ul id="courseImportance"></ul>
+
     <h3>Career Opportunities</h3>
     <ul id="courseJobs"></ul>
+
     <h3>Benefits</h3>
     <ul id="courseBenefits"></ul>
+
     <p id="courseCTA"></p>
   </div>
 </div>
+
 </section>
 
 <!-- Pricing Section -->
@@ -181,7 +194,7 @@ footer a:hover {color:#e6f0ff;}
                 <li>Updated Syllabus</li>
                 <li>Mock Tests & Doubt Sessions</li>
             </ul>
-            <button class="openModal">Enroll Now</button>
+            <button id="openModal">Enroll Now</button>
         </div>
         <div class="pricing-card popular">
             <h3>NISM VB</h3>
@@ -191,7 +204,7 @@ footer a:hover {color:#e6f0ff;}
                 <li>Updated Syllabus</li>
                 <li>High Pass Rate</li>
             </ul>
-            <button class="openModal">Enroll Now</button>
+            <button id="openModal">Enroll Now</button>
         </div>
         <div class="pricing-card">
             <h3>NISM 8</h3>
@@ -201,7 +214,7 @@ footer a:hover {color:#e6f0ff;}
                 <li>Mock Tests</li>
                 <li>Doubt Solving Sessions</li>
             </ul>
-            <button class="openModal">Enroll Now</button>
+            <button id="openModal">Enroll Now</button>
         </div>
         <div class="pricing-card">
             <h3>SEBI Certification</h3>
@@ -211,7 +224,7 @@ footer a:hover {color:#e6f0ff;}
                 <li>Updated Materials</li>
                 <li>Flexible Learning Options</li>
             </ul>
-            <button class="openModal">Enroll Now</button>
+            <button id="openModal">Enroll Now</button>
         </div>
 		<div class="pricing-card">
             <h3>PMS NISM XXI-A</h3>
@@ -221,7 +234,7 @@ footer a:hover {color:#e6f0ff;}
                 <li>Personalized Stratergies</li>
                 <li>Flexible Learning Options</li>
             </ul>
-            <button class="openModal">Enroll Now</button>
+            <button id="openModal">Enroll Now</button>
         </div>
     </div>
 </section>
@@ -231,9 +244,9 @@ footer a:hover {color:#e6f0ff;}
     <h2 class="section-title">What Our Learners Say</h2>
     <div class="testimonials">
         <div class="testimonials-container">
-            <div class="review-card"><h4>Ayush vishwakarma</h4><p>NISM certification helped me advance in my finance career and gain trust from clients.</p></div>
-            <div class="review-card"><h4>Nishu singh</h4><p>The learning resources are clear, professional, and well-structured. Highly recommend!</p></div>
-            <div class="review-card"><h4>priti kushwaha</h4><p>Excellent platform for financial knowledge. Registration was simple and smooth.</p></div>
+            <div class="review-card"><h4>Ayush Vishwakarma</h4><p>NISM certification helped me advance in my finance career and gain trust from clients.</p></div>
+            <div class="review-card"><h4>Omkar Vankhede</h4><p>The learning resources are clear, professional, and well-structured. Highly recommend!</p></div>
+            <div class="review-card"><h4>Nishu SIngh</h4><p>Excellent platform for financial knowledge. Registration was simple and smooth.</p></div>
         </div>
     </div>
 </section>
@@ -283,106 +296,56 @@ footer a:hover {color:#e6f0ff;}
     <a href="https://www.instagram.com/learnwithsanyukta?igsh=MmZnMnBpOXc5b2Y3" target="_blank"><i class="fab fa-instagram"></i></a>
 </footer>
 
-<!-- EmailJS -->
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 <script>
-  (function(){
-    emailjs.init("cdidmyhx3-nGO6f55"); // Replace with your EmailJS Public Key
-  })();
-</script>
-
-<script>
-
-  // Course Data
-
+    // Course Data
 const courses = {
-
   va: {
-
     title:"NISM Series VA – Mutual Fund (MF)",
-
     tagline:"Launch your career in Mutual Funds, Wealth Management & Financial Advisory.",
-
     importance:["SEBI-mandated certification for mutual fund advisory and distribution roles","Builds strong fundamentals in mutual funds, investor suitability & financial planning"],
-
     jobs:["Mutual Fund Advisor | Relationship Manager | Wealth Advisor","AMCs | Banks | NBFCs | Wealth Management & Distribution Firms"],
-
     benefits:["Improves job eligibility in MF & advisory roles","Enhances financial literacy and personal investment skills","Builds long-term career growth in wealth management"],
-
     cta:"✅ Enroll Now & Become a Certified Mutual Fund Professional\n🚀 Start Your Career in Mutual Funds & Wealth Advisory"
-
   },
-
   vb: {
-
     title:"NISM Series VB – Securities Markets Foundation",
-
     tagline:"Kickstart your finance career with a strong foundation in securities markets.",
-
     importance:["Covers basics of financial markets, derivatives, equity & debt instruments","Mandatory for certain SEBI registered roles"],
-
     jobs:["Stock Broker | Investment Analyst | Research Associate","Banks | Brokerage Firms | Financial Advisory"],
-
     benefits:["Strengthens market understanding","Mandatory for finance roles in India","Enhances employability in financial services"],
-
     cta:"✅ Enroll Now & Gain Market Foundation\n🚀 Boost Your Career in Finance"
-
   },
-
   viii: {
-
     title:"NISM Series VIII – Equity Derivatives",
-
     tagline:"Master derivative instruments, trading strategies & market regulations.",
-
     importance:["Understand derivative products including futures & options","Mandatory for equity derivatives advisory roles"],
-
     jobs:["Derivatives Trader | Research Analyst | Portfolio Manager","Stock Exchanges | Brokerage Firms | Investment Banks"],
-
     benefits:["Hands-on knowledge of derivatives","Preparation for professional certifications","Career advancement in trading & advisory"],
-
     cta:"✅ Enroll Now & Master Equity Derivatives\n🚀 Advance Your Career in Trading & Advisory"
-
   },
-
   Certification: {
-
     title:"SEBI Certification - Abstract Data & Market Information",
-
     tagline:"Master Securities Market Data, Reporting & Regulatory Insights.",
-
     importance:["SEBI-recognized certification focused on market data, disclosures & reporting","Mandatory for equity derivatives advisory roles","Builds strong foundation in data interpretation, compliance & transparency in capital markets"],
-
     jobs:["Compliance Executive | Research Analyst | Market Operations Executive","Stock Exchanges | Stock Broking Firms | Mutual Funds"],
-
     benefits:["Develops expertise in securities market data & regulatory reporting","Enhances analytical and interpretation skills for financial information","Supports careers in compliance, research, operations & market surveillance","Improves understanding of SEBI regulations and market disclosures"],
-
     cta:"✅ Enroll Now & Become SEBI-Certified in Market Data & Reporting\n🚀 Build a Strong Career in Securities Market Analysis & Compliance"
-
   },
-
   PMS: {
-
     title:"Portfolio management services/ NISM XXI-A",
-
     tagline:"Deliver Customized Investment Strategies & Manage High-Value Portfolios.",
-
     importance:["Focuses on professional portfolio construction, asset allocation & risk management","Essential for managing HNI & institutional client investments","Builds expertise in long-term wealth creation, performance tracking & client reporting"],
-
     jobs:["Portfolio Manager  | Investment Advisor | Wealth Manager","Fund Manager | PMS Firms | Asset Management Companies"],
-
     benefits:["Develops strong skills in portfolio strategy, diversification & risk assessment","Enhances ability to manage client-specific investment goals","Supports careers in PMS, wealth management & investment advisory","Improves understanding of market cycles, performance evaluation & regulatory compliance"],
-
     cta:"✅ Enroll Now & Master Portfolio Management Services\n🚀 Build a High-Growth Career in Wealth & Investment Management"
-
   },
-
 };
+//const WHATSAPP_NUMBER = "+91 7977871953"; // Replace with your WhatsApp number
+
 // Modal functionality
 const modal = document.getElementById("modal");
-document.querySelectorAll(".openModal, #openDemoBtn").forEach(btn => {
-    btn.addEventListener("click", () => {
-        modal.style.display = "block";
+document.querySelectorAll("#openModal, #openDemoBtn").forEach(btn => {
+    btn.onclick = () => modal.style.display = "block";
 });
 document.getElementById("closeModal").onclick = () => modal.style.display = "none";
 window.onclick = (e) => { if(e.target==modal) modal.style.display="none"; }
@@ -393,6 +356,39 @@ function showToast() {
     toast.style.display = "block";
     setTimeout(()=>toast.style.display="none",3500);
 }
+    // Open Course Modal
+	const courseModal = document.getElementById("courseModal");
+const courseTitle = document.getElementById("courseTitle");
+const courseTagline = document.getElementById("courseTagline");
+const courseImportance = document.getElementById("courseImportance");
+const courseJobs = document.getElementById("courseJobs");
+const courseBenefits = document.getElementById("courseBenefits");
+const courseCTA = document.getElementById("courseCTA");
+
+document.querySelectorAll(".viewBtn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const courseKey = btn.dataset.course;
+    const data = courses[courseKey];
+    courseTitle.textContent = data.title;
+    courseTagline.textContent = data.tagline;
+    courseImportance.innerHTML = data.importance.map(i => `<li>${i}</li>`).join("");
+    courseJobs.innerHTML = data.jobs.map(i => `<li>${i}</li>`).join("");
+    courseBenefits.innerHTML = data.benefits.map(i => `<li>${i}</li>`).join("");
+    courseCTA.textContent = data.cta;
+	
+    courseModal.style.display = "block";
+  });
+});
+
+document.getElementById("closeCourseModal").onclick = () => {
+  courseModal.style.display = "none";
+};
+
+window.onclick = (e) => {
+  if (e.target === courseModal) {
+    courseModal.style.display = "none";
+  }
+};
 
 // Form submission with EmailJS
 document.getElementById("nismForm").addEventListener("submit", function(e){
@@ -417,70 +413,6 @@ document.getElementById("nismForm").addEventListener("submit", function(e){
         console.error(error);
     });
 });
-
-    // Open Course Modal
-
-	const courseModal = document.getElementById("courseModal");
-
-const courseTitle = document.getElementById("courseTitle");
-
-const courseTagline = document.getElementById("courseTagline");
-
-const courseImportance = document.getElementById("courseImportance");
-
-const courseJobs = document.getElementById("courseJobs");
-
-const courseBenefits = document.getElementById("courseBenefits");
-
-const courseCTA = document.getElementById("courseCTA");
-
-
-Change
-23 of 27
-
-document.querySelectorAll(".viewBtn").forEach(btn => {
-
-  btn.addEventListener("click", () => {
-
-    const courseKey = btn.dataset.course;
-
-    const data = courses[courseKey];
-
-    courseTitle.textContent = data.title;
-
-    courseTagline.textContent = data.tagline;
-
-    courseImportance.innerHTML = data.importance.map(i => `<li>${i}</li>`).join("");
-
-    courseJobs.innerHTML = data.jobs.map(i => `<li>${i}</li>`).join("");
-
-    courseBenefits.innerHTML = data.benefits.map(i => `<li>${i}</li>`).join("");
-
-    courseCTA.textContent = data.cta;
-
-	
-
-    courseModal.style.display = "block";
-
-  });
-
-});
-
-
-
-document.getElementById("closeCourseModal").onclick = () => {
-
-  courseModal.style.display = "none";
-
-};
-
-
-
-window.addEventListener("click", (e) => {
-    if (e.target === modal) modal.style.display = "none";
-    if (e.target === courseModal) courseModal.style.display = "none";
-
-};
 
 // FAQ Toggle
 document.querySelectorAll(".faq-item").forEach(item=>{
